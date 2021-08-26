@@ -1,0 +1,12 @@
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.content {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: #fff;
+}
