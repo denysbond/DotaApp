@@ -10,7 +10,8 @@
 }
 
 .App {
-  padding: 0 200px;
+  padding-left: 200px;
+  padding-right: 100px;
 }
 
 .logo {

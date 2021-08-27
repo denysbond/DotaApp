@@ -1,0 +1,15 @@
+.heroes_attr {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.heroes_container {
+  background-color: brown;
+  margin-right: 30px;
+}
+
+.heroes_class {
+  font-size: 20px;
+  color: rgb(243, 193, 66);
+  margin: 10px 0 10px 10px;
+}

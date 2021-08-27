@@ -1,7 +1,7 @@
 import React from "react";
-import StrenchHeroes from "../HeroesPrimary/StrenchHeroes";
-import AgiHeroes from "../HeroesPrimary/AgiHeroes";
-import IntHeroes from "../HeroesPrimary/IntHeroes";
+import StrenchHeroes from "../HeroesAttr/StrenchHeroes";
+import AgiHeroes from "../HeroesAttr/AgiHeroes";
+import IntHeroes from "../HeroesAttr/IntHeroes";
 import classes from "./HeroesList.module.css";
 
 const HeroList = ({ heroes }) => {

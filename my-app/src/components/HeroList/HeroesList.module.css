@@ -1,5 +1,7 @@
 .heroesList {
-  display: flex;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   margin-top: 50px;
   justify-content: space-between;
+  padding-right: 100px;
 }

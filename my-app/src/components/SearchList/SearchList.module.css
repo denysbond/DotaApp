@@ -1,0 +1,18 @@
+.searchList {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchHero {
+  background-color: brown;
+  padding: 10px 10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.found {
+  font-size: 20px;
+  color: rgb(243, 193, 66);
+  margin: 10px 0 10px 10px;
+}

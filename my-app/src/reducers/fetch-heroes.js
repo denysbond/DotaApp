@@ -2,12 +2,14 @@ import {
   FETCH_HEROES_START,
   FETCH_HEROES_SUCCESS,
   FETCH_HEROES_FAILURE,
+  SEARCH_HEROES_LIST,
 } from "../actions/fetch-heroes";
 
 const initialState = {
   heroes: [],
   loading: false,
   error: null,
+  newHero: [],
 };
 
 export const fetchHeroesReducer = (state = initialState, action) => {
@@ -29,6 +31,12 @@ export const fetchHeroesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error,
+      };
+    case SEARCH_HEROES_LIST:
+      return {
+        ...state,
+        loading: false,
+        newHero: action.payload,
       };
     default:
       return state;

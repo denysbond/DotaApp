@@ -7,7 +7,7 @@ const Hero = ({ hero, index, heroes }) => {
 
   return (
     <div className={classes.hero}>
-      <img src={src} alt="logo" />
+      <img className={classes.heroImg} src={src} alt="logo" />
       <span className={classes.content}>{hero.localized_name}</span>
     </div>
   );

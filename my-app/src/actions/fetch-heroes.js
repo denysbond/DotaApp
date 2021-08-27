@@ -3,6 +3,7 @@ import axios from "axios";
 export const FETCH_HEROES_START = "FETCH_HEROES_START";
 export const FETCH_HEROES_SUCCESS = "FETCH_HEROES_SUCCESS";
 export const FETCH_HEROES_FAILURE = "FETCH_HEROES_FAILURE";
+export const SEARCH_HEROES_LIST = "SEARCH_HEROES_LIST";
 
 const fetchHeroesStart = () => ({
   type: FETCH_HEROES_START,
@@ -18,9 +19,14 @@ const fetchHeroesFailure = (error) => ({
   payload: error,
 });
 
+const searchedHeroesList = (newHeroes) => ({
+  type: SEARCH_HEROES_LIST,
+  payload: newHeroes,
+});
+
 export const fetchHeroes = () => {
   return (dispatch) => {
-    dispatch(fetchHeroesStart);
+    dispatch(fetchHeroesStart());
 
     axios
       .get("https://api.opendota.com/api/heroStats")
@@ -33,4 +39,12 @@ export const fetchHeroes = () => {
         dispatch(fetchHeroesFailure(errMsg));
       });
   };
+};
+
+export const searchedHeroes = (heroes, searchHero) => (dispatch) => {
+  const newHero = heroes.filter((hero) => {
+    return hero.localized_name.includes(searchHero);
+  });
+
+  dispatch(searchedHeroesList(newHero));
 };
