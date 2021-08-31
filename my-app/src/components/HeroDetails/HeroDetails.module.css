@@ -1,0 +1,40 @@
+.detailsContent {
+  display: flex;
+  padding-bottom: 25px;
+  margin-top: 25px;
+}
+
+.details {
+  background-color: rgb(224, 231, 231);
+  padding: 10px;
+}
+
+.heroContent {
+  display: flex;
+}
+
+.heroInfo {
+  margin-left: 30px;
+  list-style: none;
+}
+
+.heroInfo li {
+  margin-top: 20px;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  background-color: coral;
+  margin-top: 20px;
+}
+
+.heroStats h2 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.heroStats li {
+  margin-top: 10px;
+  list-style-type: none;
+}

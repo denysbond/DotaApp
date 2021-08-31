@@ -3,6 +3,7 @@ import {
   FETCH_HEROES_SUCCESS,
   FETCH_HEROES_FAILURE,
   SEARCH_HEROES_LIST,
+  SEARCH_HERO_DETAILS,
 } from "../actions/fetch-heroes";
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   loading: false,
   error: null,
   newHero: [],
+  detailedHero: [],
 };
 
 export const fetchHeroesReducer = (state = initialState, action) => {
@@ -38,6 +40,13 @@ export const fetchHeroesReducer = (state = initialState, action) => {
         loading: false,
         newHero: action.payload,
       };
+    case SEARCH_HERO_DETAILS:
+      return {
+        ...state,
+        loading: false,
+        detailedHero: action.payload,
+      };
+
     default:
       return state;
   }

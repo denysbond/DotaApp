@@ -7,9 +7,6 @@
 #root {
   display: flex;
   flex-direction: column;
-}
-
-.App {
   padding-left: 200px;
   padding-right: 100px;
 }

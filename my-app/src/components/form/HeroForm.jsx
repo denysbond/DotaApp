@@ -15,24 +15,24 @@ const HeroForm = ({ heroes, ...props }) => {
   };
 
   const reset = () => {
-    fetchHeroes();
+    props.fetchHeroes();
   };
 
   return (
-    <form>
-      <p>Search</p>
-      <MyInput
-        type="text"
-        value={searchHero}
-        onChange={(e) => setSearchHero(e.target.value)}
-      />
-      <MyButton type="submit" onClick={filterHeroes}>
-        Find
-      </MyButton>
-      <MyButton type="submit" onClick={reset}>
-        Reset
-      </MyButton>
-    </form>
+    <div>
+      <form>
+        <p>Search</p>
+        <MyInput
+          type="text"
+          value={searchHero}
+          onChange={(e) => setSearchHero(e.target.value)}
+        />
+        <MyButton type="submit" onClick={filterHeroes}>
+          Find
+        </MyButton>
+        <MyButton onClick={reset}>Reset</MyButton>
+      </form>
+    </div>
   );
 };
 
