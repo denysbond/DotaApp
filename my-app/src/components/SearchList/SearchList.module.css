@@ -1,7 +1,8 @@
 .searchList {
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .searchHero {
@@ -9,10 +10,11 @@
   padding: 10px 10px;
   display: grid;
   grid-template-columns: 50% 50%;
+  width: 350px;
 }
 
 .found {
-  font-size: 20px;
-  color: rgb(243, 193, 66);
+  font-size: 30px;
+  color: rgb(24, 21, 13);
   margin: 10px 0 10px 10px;
 }

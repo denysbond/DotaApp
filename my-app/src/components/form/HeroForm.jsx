@@ -1,25 +1,28 @@
 import React, { useState } from "react";
 import { searchedHeroes, fetchHeroes } from "../../actions/fetch-heroes";
-import MyButton from "../UI/button/MyButton";
+import { useHistory } from "react-router";
 import MyInput from "../UI/input/MyInput";
 import "./HeroForm.css";
 import { connect } from "react-redux";
 
 const HeroForm = ({ heroes, ...props }) => {
   const [searchHero, setSearchHero] = useState("");
+  const history = useHistory();
 
   const filterHeroes = (e) => {
     e.preventDefault();
-
     props.searchedHeroes(heroes, searchHero);
+
+    history.push("/searchlist");
   };
 
   const reset = () => {
     props.fetchHeroes();
+    history.push("/");
   };
 
   return (
-    <div>
+    <div className="heroForm">
       <form>
         <p>Search</p>
         <MyInput
@@ -27,10 +30,16 @@ const HeroForm = ({ heroes, ...props }) => {
           value={searchHero}
           onChange={(e) => setSearchHero(e.target.value)}
         />
-        <MyButton type="submit" onClick={filterHeroes}>
+        <button
+          className="myBtn"
+          onClick={filterHeroes}
+          disabled={!searchHero && true}
+        >
           Find
-        </MyButton>
-        <MyButton onClick={reset}>Reset</MyButton>
+        </button>
+        <button className="myBtn" onClick={reset}>
+          Reset
+        </button>
       </form>
     </div>
   );

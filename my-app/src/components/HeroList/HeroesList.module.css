@@ -4,4 +4,9 @@
   margin-top: 50px;
   justify-content: space-between;
   padding-right: 100px;
+  padding-bottom: 50px;
+}
+
+.hide {
+  display: none;
 }

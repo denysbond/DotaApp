@@ -4,42 +4,32 @@ import { fetchHeroes } from "../../actions/fetch-heroes";
 import { useEffect } from "react";
 import HeroList from "../HeroList/HeroList";
 import Loader from "../UI/loader/Loader";
-import SearchList from "../SearchList/SearchList";
-
-import HeroForm from "../form/HeroForm";
+import { useHistory } from "react-router";
 import "../../styles/App.css";
-import NotFound from "../NotFound/NotFound";
 
 const Heroes = (props) => {
+  const history = useHistory();
   useEffect(() => {
     props.fetchHeroes();
   }, []);
 
   const heroes = props.heroesData;
-  console.log(props.newHero.length);
 
   return (
     <div className="App">
-      <HeroForm />
       <div>
-        {props.newHero.length ? (
-          <SearchList newHero={props.newHero} />
-        ) : (
-          <div>
-            {props.isLoading ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "150px",
-                }}
-              >
-                <Loader />
-              </div>
-            ) : (
-              <HeroList heroes={heroes} />
-            )}
+        {props.isLoading ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "150px",
+            }}
+          >
+            <Loader />
           </div>
+        ) : (
+          <HeroList heroes={heroes} newHeroesLength={props.newHero.length} />
         )}
       </div>
     </div>

@@ -8,3 +8,20 @@ p {
   font-size: 25px;
   font-weight: bold;
 }
+
+.myBtn {
+  padding: 5px 75px;
+  background-color: #fff;
+  color: rgb(43, 137, 226);
+  border: 1px solid rgb(43, 137, 226);
+}
+
+.myBtn:hover {
+  background-color: rgb(43, 137, 226);
+  color: #fff;
+  cursor: pointer;
+}
+
+.heroForm {
+  padding-bottom: 20px;
+}

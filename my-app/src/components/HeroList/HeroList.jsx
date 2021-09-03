@@ -4,7 +4,7 @@ import AgiHeroes from "../HeroesAttr/AgiHeroes";
 import IntHeroes from "../HeroesAttr/IntHeroes";
 import classes from "./HeroesList.module.css";
 
-const HeroList = ({ heroes }) => {
+const HeroList = ({ heroes, newHeroesLength }) => {
   const strHeroes = () => {
     const str = heroes.filter((hero) => {
       return hero.primary_attr === "str";
@@ -25,9 +25,9 @@ const HeroList = ({ heroes }) => {
     });
     return int;
   };
-
+  console.log(newHeroesLength);
   return (
-    <div className={classes.heroesList}>
+    <div className={`${classes.heroesList} ${newHeroesLength && classes.hide}`}>
       <StrenchHeroes heroes={strHeroes} />
       <AgiHeroes heroes={agiHeroes} />
       <IntHeroes heroes={intHeroes} />
